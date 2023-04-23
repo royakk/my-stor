@@ -16,6 +16,7 @@ function Navbar({data}) {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const dispatch= useDispatch();
+  const { cartTotalQuantity} = useSelector((store) => store.cart)
 
   const hanldleClick = (event,page) => {
     dispatch(filterProduct(page))
@@ -110,7 +111,7 @@ function Navbar({data}) {
           <Box sx={{ flexGrow: 0 }}>
             
          
-          <Badge badgeContent={4} color="error">
+          <Badge badgeContent={cartTotalQuantity} color="error">
           
         <Button sx={{backgroundColor: '#6F11E1',borderRadius:'5px',minWidth:'14px',color:'#fff'}} size="large" aria-label="show 4 new mails" color="inherit">
         <MailIcon/> </Button></Badge>

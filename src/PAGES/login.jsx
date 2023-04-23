@@ -67,7 +67,7 @@ export default function LoginForm() {
             
             const response= await Services.Login(values)
            dispatch(setToken(response.data.token)) ;
-            // response.data.token && router.push('/dashboard')
+            response.data.token && router.push('/home')
            
             }
             catch (error){

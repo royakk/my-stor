@@ -4,21 +4,23 @@ import AppBar from '@mui/material/AppBar';
 import {Box, Stack, Typography, IconButton,Button, Container,
 Badge,  
 Grid} from '@mui/material';
-import Toolbar from '@mui/material/Toolbar';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import { filterProduct } from '@/store/productSlice';
+import { useRouter } from 'next/router'
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 
 import classes from  '@/styles/productCard.module.css'
-
+import { addToCart } from '@/store/cartSlice';
 import { useSelector, useDispatch } from "react-redux";
 
 export default function ProductDetail({dataProduct}) {
-  
+  const router = useRouter()
+  const cart = useSelector((state) => state.cart)
   const dispatch= useDispatch();
-  const handleClick=()=>{};
+  const handleClick=()=>{
+    dispatch(addToCart(
+      dataProduct))
+   
+    router.push('./cart')
+  };
   const styles = {
     main: {
         maxWidth: 900,
