@@ -60,7 +60,7 @@ export default function LoginForm() {
           </Snackbar>
         </div>
         <Formik
-          initialValues={{ username: 'doreno', password: 'ewedon' }}
+          initialValues={{ username: 'donero', password: 'ewedon' }}
           
           onSubmit={async (values) => {
             try{
