@@ -153,6 +153,7 @@ export default function Payment({ dataProduct }) {
           </Button>
         </Box>
       </Box>
+      
     </>
   );
 }
